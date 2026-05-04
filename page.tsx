@@ -322,4 +322,10 @@ export default function MedicalLabWebsite() {
       </footer>
     </div>
   );
-}
+}  "dependencies": {
+    "next": "latest",
+    "react": "latest",
+    "react-dom": "latest",
+    "framer-motion": "latest",
+    "lucide-react": "latest"
+  },
