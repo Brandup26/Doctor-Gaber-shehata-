@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#0a0a0a">
+    <meta name="description" content="مطعم لامار - تجربة طعام فاخرة">
+    <title>لامار | Lamarr Restaurant</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Remix Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div class="loader" id="loader">
+        <div class="loader-content">
+            <div class="logo-loader">
+                <span class="logo-text">لامار</span>
+            </div>
+            <div class="loader-bar">
+                <div class="loader-progress"></div>
+            </div>
+            <p class="loader-text">جاري التحميل...</p>
+        </div>
+    </div>
+
+    <!-- Main App -->
+    <div class="app" id="app">
+        
+        <!-- Header -->
+        <header class="header" id="header">
+            <div class="header-content">
+                <div class="logo">
+                    <span class="logo-icon">
+                        <i class="ri-restaurant-2-line"></i>
+                    </span>
+                    <span class="logo-text">لامار</span>
+                </div>
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                    <i class="ri-sun-line"></i>
+                </button>
+            </div>
+        </header>
+
+        <!-- Hero Section -->
+        <section class="hero" id="hero">
+            <div class="hero-bg">
+                <div class="hero-gradient"></div>
+                <div class="hero-pattern"></div>
+            </div>
+            <div class="hero-content">
+                <div class="hero-badge animate-fade-in">
+                    <i class="ri-sparkling-line"></i>
+                    <span>أطباق فاخرة</span>
+                </div>
+                <h1 class="hero-title animate-fade-in delay-1">
+                    <span class="title-line">نكهة لا تُضاهى</span>
+                    <span class="title-accent">في كل قضمة</span>
+                </h1>
+                <p class="hero-description animate-fade-in delay-2">
+                    اكتشف تجربة طعام استثنائية مع أشهى الأطباق المحضرة بأحدث التقنيات وأجود المكونات
+                </p>
+                <div class="hero-actions animate-fade-in delay-3">
+                    <a href="#menu" class="btn btn-primary">
+                        <span>استعرض القائمة</span>
+                        <i class="ri-arrow-down-line"></i>
+                    </a>
+                    <a href="#about" class="btn btn-secondary">
+                        <span>عن المطعم</span>
+                        <i class="ri-information-line"></i>
+                    </a>
+                </div>
+                <div class="hero-stats animate-fade-in delay-4">
+                    <div class="stat-item">
+                        <span class="stat-number">15+</span>
+                        <span class="stat-label">سنة خبرة</span>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat-item">
+                        <span class="stat-number">50+</span>
+                        <span class="stat-label">طبق مميز</span>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat-item">
+                        <span class="stat-number">10K+</span>
+                        <span class="stat-label">عميل سعيد</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-scroll-indicator">
+                <div class="scroll-line"></div>
+            </div>
+        </section>
+
+        <!-- Menu Section -->
+        <section class="menu-section" id="menu">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-badge">القائمة</span>
+                    <h2 class="section-title">اكتشف أطباقنا</h2>
+                    <p class="section-description">
+                        مجموعة متنوعة من الأطباق الفاخرة المحضرة بأيدي طهاة محترفين
+                    </p>
+                </div>
+
+                <!-- Categories -->
+                <div class="categories-wrapper">
+                    <div class="categories" id="categories">
+                        <button class="category-btn active" data-category="all">
+                            <i class="ri-apps-line"></i>
+                            <span>الكل</span>
+                        </button>
+                        <button class="category-btn" data-category="appetizers">
+                            <i class="ri-bowl-line"></i>
+                            <span>المقبلات</span>
+                        </button>
+                        <button class="category-btn" data-category="mains">
+                            <i class="ri-bear-smile-line"></i>
+                            <span>الأطباق الرئيسية</span>
+                        </button>
+                        <button class="category-btn" data-category="desserts">
+                            <i class="ri-cake-3-line"></i>
+                            <span>الحلويات</span>
+                        </button>
+                        <button class="category-btn" data-category="drinks">
+                            <i class="ri-goblet-line"></i>
+                            <span>المشروبات</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Menu Grid -->
+                <div class="menu-grid" id="menuGrid">
+                    <!-- Appetizers -->
+                    <article class="menu-card" data-category="appetizers">
+                        <div class="card-image">
+                            <img src="https://images.unsplash.com/photo-1541014741259-de529411b96a?w=400&h=300&fit=crop" alt="حمص متبل" loading="lazy">
+                            <div class="card-badge">مميز</div>
+                            <button class="favorite-btn" aria-label="إضافة للمفضلة">
+                                <i class="ri-heart-line"></i>
+                            </button>
+                        </div>
+                        <div class="card-content">
+                            <div class="card-header">
+                                <h3 class="card-title">حمص متبل فاخر</h3>
+                                <div class="card-price">25 <span>ر.س</span></div>
+                            </div>
+                            <p class="card-description">
+                                حمص كريمي مع زيت الزيتون البكر وصلصة الببادمجان المدخن
+                            </p>
+                            <div class="card-footer">
+                                <div class="card-rating">
+                                    <i class="ri-star-fill"></i>
+                                    <span>4.9</span>
+                                </div>
+                                <button class="add-btn">
+                                    <i class="ri-add-line"></i>
+                                    <span>إضافة</span>
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="menu-card" data-category="appetizers">
+                        <div class="card-image">
+                            <img src="https://images.unsplash.com/photo-1608039829572-8678deadf5bb?w=400&h=300&fit=crop" alt="فتوش" loading="lazy">
+                            <button class="favorite-btn" aria-label="إضافة للمفضلة">
+                                <i class="ri-heart-line"></i>
+                            </button>
+                        </div>
+                        <div class="card-content">
+                            <div class="card-header">
+                                <h3 class="card-title">فتوش لبناني</h3>
+                                <div class="card-price">22 <span>ر.س</span></div>
+                            </div>
+                            <p class="card-description">
+                                سلطة خضراء منعشة مع الخبز المحمص ودبس الرمان
+                            </p>
+                            <div class="card-footer">
+                                <div class="card-rating">
+                                    <i class="ri-star-fill"></i>
+                                    <span>4.8</span>
+                                </div>
+                                <button class="add-btn">
+                                    <i class="ri-add-line"></i>
+                                    <span>إضافة</span>
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Main Dishes -->
+                    <article class="menu-card" data-category="mains">
+                        <div class="card-image">
+                            <img src="https://images.unsplash.com/photo-1544025162-d76694265947?w=400&h=300&fit=crop" alt="كبسة لحم" loading="lazy">
+                            <div class="card-badge hot">ساخن</div>
+                            <button class="favorite-btn" aria-label="إضافة للمفضلة">
+                                <i class="ri-heart-line"></i>
+                            </button>
+                        </div>
+                        <div class="card-content">
+                            <div class="card-header">
+                                <h3 class="card-title">كبسة لحم فاخر</h3>
+                                <div class="card-price">95 <span>ر.س</span></div>
+                            </div>
+                            <p class="card-description">
+                                أرز بسمتي مع قطع اللحم الطازج والتوابل العربية الأصيلة
+                            </p>
+                            <div class="card-footer">
+                                <div class="card-rating">
+                                    <i class="ri-star-fill"></i>
+                                    <span>4.9</span>
+                                </div>
+                                <button class="add-btn">
+                                    <i class="ri-add-line"></i>
+                                    <span>إضافة</span>
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="menu-card" data-category="mains">
+                        <div class="card-image">
+                            <img src="https://images.unsplash.com/photo-1512058564366-18510be2db19?w=400&h=300&fit=crop" alt="كوردن بلو" loading="lazy">
+                            <div class="card-badge">جديد</div>
+                            <button class="favorite-btn" aria-label="إضافة للمفضلة">
+                                <i class="ri-heart-line"></i>
+                            </button>
+                        </div>
+                        <div class="card-content">
+                            <div class="card-header">
+                                <h3 class="card-title">كوردن بلو</h3>
+                                <div class="card-price">75 <span>ر.س</span></div>
+                            </div>
+                            <p class="card-description">
+                                فيليه دجاج محشو بالجبن والدجاج مع صوص المشروم الكريمي
+                            </p>
+                            <div class="card-footer">
+                                <div class="card-rating">
+                                    <i class="ri-star-fill"></i>
+                                    <span>4.7</span>
+                                </div>
+                                <button class="add-btn">
+                                    <i class="ri-add-line"></i>
+                                    <span>إضافة</span>
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="menu-card" data-category="mains">
+                        <div class="card-image">
+                            <img src="https://images.unsplash.com/photo-1467003909585-2f8a72700288?w=400&h=300&fit=crop" alt="سلمون مشوي" loading="lazy">
+                            <button class="favorite-btn" aria-label="إضافة للمفضلة">
+                                <i class="ri-heart-line"></i>
+                            </button>
+                        </div>
+                        <div class="card-content">
+                            <div class="card-header">
+                                <h3 class="card-title">سلمون مشوي</h3>
+                                <div class="card-price">85 <span>ر.س</span></div>
+                            </div>
+                            <p class="card-description">
+                                سلمون طازج مشوي مع الخضار المشكلة وصلصة الليمون
+                            </p>
+                            <div class="card-footer">
+                                <div class="card-rating">
+                                    <i class="ri-star-fill"></i>
+                                    <span>4.8</span>
+                                </div>
+                                <button class="add-btn">
+                                    <i class="ri-add-line"></i>
+                                    <span>إضافة</span>
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="menu-card" data-category="mains">
+                        <div class="card-image">
+                            <img src="https://images.unsplash.com/photo-1595295333158-4742f28fbd85?w=400&h=300&fit=crop" alt="مشاوي مشكلة" loading="lazy">
+                            <div class="card-badge hot">ساخن</div>
+                            <button class="favorite-btn" aria-label="إضافة للمفضلة">
+                                <i class="ri-heart-line"></i>
+                            </button>
+                        </div>
+                        <div class="card-content">
+                            <div class="card-header">
+                                <h3 class="card-title">مشاوي مشكلة</h3>
+                                <div class="card-price">145 <span>ر.س</span></div>
+                            </div>
+                            <p class="card-description">
+                                تشكيلة مشاوي فاخرة تشمل كباب وكفتة ودجاج مشوي
+                            </p>
+                            <div class="card-footer">
+                                <div class="card-rating">
+                                    <i class="ri-star-fill"></i>
+                                    <span>4.9</span>
+                                </div>
+                                <button class="add-btn">
+                                    <i class="ri-add-line"></i>
+                                    <span>إضافة</span>
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Desserts -->
+                    <article class="menu-card" data-category="desserts">
+                        <div class="card-image">
+                            <img src="https://images.unsplash.com/photo-1551024506-0bccd828d307?w=400&h=300&fit=crop" alt="كنافة" loading="lazy">
+                            <div class="card-badge">مميز</div>
+                            <button class="favorite-btn" aria-label="إضافة للمفضلة">
+                                <i class="ri-heart-line"></i>
+                            </button>
+                        </div>
+                        <div class="card-content">
+                            <div class="card-header">
+                                <h3 class="card-title">كنافة نابلسية</h3>
+                                <div class="card-price">35 <span>ر.س</span></div>
+                            </div>
+                            <p class="card-description">
+                                كنافة طازجة بالجبن الخاص مع القطر الساخن والفستق الحلبي
+                            </p>
+                            <div class="card-footer">
+                                <div class="card-rating">
+                                    <i class="ri-star-fill"></i>
+                                    <span>4.9</span>
+                                </div>
+                                <button class="add-btn">
+                                    <i class="ri-add-line"></i>
+                                    <span>إضافة</span>
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="menu-card" data-category="desserts">
+                        <div class="card-image">
+                            <img src="https://images.unsplash.com/photo-1563805042-7684c019e1cb?w=400&h=300&fit=crop" alt="آيس كريم" loading="lazy">
+                            <button class="favorite-btn" aria-label="إضافة للمفضلة">
+                                <i class="ri-heart-line"></i>
+                            </button>
+                        </div>
+                        <div class="card-content">
+                            <div class="card-header">
+                                <h3 class="card-title">آيس كريم فاخر</h3>
+                                <div class="card-price">28 <span>ر.س</span></div>
+                            </div>
+                            <p class="card-description">
+                                ثلاث كرات آيس كريم بصوص الشوكولاتة الساخنة والمكسرات
+                            </p>
+                            <div class="card-footer">
+                                <div class="card-rating">
+                                    <i class="ri-star-fill"></i>
+                                    <span>4.6</span>
+                                </div>
+                                <button class="add-btn">
+                                    <i class="ri-add-line"></i>
+                                    <span>إضافة</span>
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Drinks -->
+                    <article class="menu-card" data-category="drinks">
+                        <div class="card-image">
+                            <img src="https://images.unsplash.com/photo-1544145945-f90425340c7e?w=400&h=300&fit=crop" alt="عصير الطازج" loading="lazy">
+                            <button class="favorite-btn" aria-label="إضافة للمفضلة">
+                                <i class="ri-heart-line"></i>
+                            </button>
+                        </div>
+                        <div class="card-content">
+                            <div class="card-header">
+                                <h3 class="card-title">سموذي الفواكه</h3>
+                                <div class="card-price">18 <span>ر.س</span></div>
+                            </div>
+                            <p class="card-description">
+                                مزيج منعش من الفواكه الموسمية الطازجة
+                            </p>
+                            <div class="card-footer">
+                                <div class="card-rating">
+                                    <i class="ri-star-fill"></i>
+                                    <span>4.5</span>
+                                </div>
+                                <button class="add-btn">
+                                    <i class="ri-add-line"></i>
+                                    <span>إضافة</span>
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="menu-card" data-category="drinks">
+                        <div class="card-image">
+                            <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=400&h=300&fit=crop" alt="قهوة" loading="lazy">
+                            <div class="card-badge">ساخن</div>
+                            <button class="favorite-btn" aria-label="إضافة للمفضلة">
+                                <i class="ri-heart-line"></i>
+                            </button>
+                        </div>
+                        <div class="card-content">
+                            <div class="card-header">
+                                <h3 class="card-title">قهوة عربية</h3>
+                                <div class="card-price">8 <span>ر.س</span></div>
+                            </div>
+                            <p class="card-description">
+                                قهوة عربية أصيلة مع التمر والهيل الطازج
+                            </p>
+                            <div class="card-footer">
+                                <div class="card-rating">
+                                    <i class="ri-star-fill"></i>
+                                    <span>4.8</span>
+                                </div>
+                                <button class="add-btn">
+                                    <i class="ri-add-line"></i>
+                                    <span>إضافة</span>
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section class="about-section" id="about">
+            <div class="container">
+                <div class="about-grid">
+                    <div class="about-images">
+                        <div class="about-image main-image">
+                            <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600&h=400&fit=crop" alt="داخل المطعم" loading="lazy">
+                        </div>
+                        <div class="about-image secondary-image">
+                            <img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?w=300&h=200&fit=crop" alt="الطهاة" loading="lazy">
+                        </div>
+                        <div class="experience-badge">
+                            <span class="exp-number">15</span>
+                            <span class="exp-text">سنة من<br>التميز</span>
+                        </div>
+                    </div>
+                    <div class="about-content">
+                        <span class="section-badge">من نحن</span>
+                        <h2 class="section-title">قصة لامار</h2>
+                        <p class="about-text">
+                            بدأت رحلتنا منذ أكثر من 15 عاماً برؤية بسيطة: تقديم تجربة طعام استثنائية 
+                            تجمع بين الأصالة والابتكار. نحن نؤمن بأن كل طبق يحكي قصة، وكل قضمة 
+                            هي فرصة لخلق ذكرى لا تُنسى.
+                        </p>
+                        <p class="about-text">
+                            نختار مكوناتنا بعناية فائقة من أجود المصادر، ونتبع أحدث تقنيات 
+                            الطهي لنقدم لك أطباقاً تمزج بين النكهات العربية الأصيلة واللمسة العصرية.
+                        </p>
+                        <div class="about-features">
+                            <div class="feature-item">
+                                <div class="feature-icon">
+                                    <i class="ri-leaf-line"></i>
+                                </div>
+                                <div class="feature-info">
+                                    <h4>مكونات طازجة</h4>
+                                    <p>نختار أجود المكونات الطازجة يومياً</p>
+                                </div>
+                            </div>
+                            <div class="feature-item">
+                                <div class="feature-icon">
+                                    <i class="ri-chef-hat-line"></i>
+                                </div>
+                                <div class="feature-info">
+                                    <h4>طهاة محترفون</h4>
+                                    <p>فريق من أمهر الطهاة الدوليين</p>
+                                </div>
+                            </div>
+                            <div class="feature-item">
+                                <div class="feature-icon">
+                                    <i class="ri-service-line"></i>
+                                </div>
+                                <div class="feature-info">
+                                    <h4>خدمة VIP</h4>
+                                    <p>نقدم خدمة استثنائية لعملائنا</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery Section -->
+        <section class="gallery-section" id="gallery">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-badge">معرض</span>
+                    <h2 class="section-title">لحظات من الفخامة</h2>
+                </div>
+                <div class="gallery-grid">
+                    <div class="gallery-item large">
+                        <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=600&h=400&fit=crop" alt="داخل المطعم" loading="lazy">
+                        <div class="gallery-overlay">
+                            <span>الأجواء الراقية</span>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1551218808-94e220e084d2?w=300&h=300&fit=crop" alt="طبق مميز" loading="lazy">
+                        <div class="gallery-overlay">
+                            <span>أطباق فاخرة</span>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1550966871-3ed3cdb5ed0c?w=300&h=300&fit=crop" alt="تحضير الطعام" loading="lazy">
+                        <div class="gallery-overlay">
+                            <span>فن الطهي</span>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1424847651672-bf20a4b0982b?w=300&h=300&fit=crop" alt="الطاولات" loading="lazy">
+                        <div class="gallery-overlay">
+                            <span>جلسات خاصة</span>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1482049016gy6-d3d6aa45e01e?w=300&h=300&fit=crop" alt="مشروبات" loading="lazy">
+                        <div class="gallery-overlay">
+                            <span>مشروبات مميزة</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="contact-section" id="contact">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-badge">تواصل معنا</span>
+                    <h2 class="section-title">نحن هنا لخدمتك</h2>
+                </div>
+                <div class="contact-grid">
+                    <div class="contact-info">
+                        <div class="contact-card">
+                            <div class="contact-icon">
+                                <i class="ri-map-pin-3-line"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h4>العنوان</h4>
+                                <p>شارع الأمير محمد بن عبدالعزيز، حي العليا<br>الرياض، المملكة العربية السعودية</p>
+                            </div>
+                        </div>
+                        <div class="contact-card">
+                            <div class="contact-icon">
+                                <i class="ri-time-line"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h4>ساعات العمل</h4>
+                                <p>يومياً من 12:00 ظهراً حتى 12:00 منتصف الليل<br>الجمعة: من 1:00 مساءً</p>
+                            </div>
+                        </div>
+                        <div class="contact-card">
+                            <div class="contact-icon">
+                                <i class="ri-phone-line"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h4>اتصل بنا</h4>
+                                <p dir="ltr">+966 11 234 5678</p>
+                            </div>
+                        </div>
+                        <div class="contact-card">
+                            <div class="contact-icon">
+                                <i class="ri-mail-line"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h4>البريد الإلكتروني</h4>
+                                <p>info@lamarr.sa</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contact-form-wrapper">
+                        <form class="contact-form" id="contactForm">
+                            <div class="form-group">
+                                <label for="name">الاسم</label>
+                                <input type="text" id="name" name="name" placeholder="أدخل اسمك" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">رقم الجوال</label>
+                                <input type="tel" id="phone" name="phone" placeholder="05xxxxxxxx" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">الرسالة</label>
+                                <textarea id="message" name="message" placeholder="اكتب رسالتك هنا..." rows="4" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-full">
+                                <span>إرسال الرسالة</span>
+                                <i class="ri-send-plane-line"></i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Map Section -->
+        <section class="map-section" id="map">
+            <div class="map-wrapper">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3621.4724724724725!2d46.6845!3d24.7132!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjTCsDQyJzQ2LjciTiA0NsKwNDEnMDYuNiJF!5e0!3m2!1sen!2ssa!4v1234567890"
+                    width="100%" 
+                    height="400" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"
+                    title="موقع مطعم لامار">
+                </iframe>
+                <div class="map-overlay"></div>
+            </div>
+            <div class="map-card">
+                <div class="map-icon">
+                    <i class="ri-map-pin-2-line"></i>
+                </div>
+                <div class="map-info">
+                    <h4>موقعنا</h4>
+                    <p>شارع الأمير محمد بن عبدالعزيز، الرياض</p>
+                </div>
+                <a href="https://maps.google.com" target="_blank" class="btn btn-small">
+                    <span>احصل على الاتجاهات</span>
+                    <i class="ri-arrow-left-line"></i>
+                </a>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <i class="ri-restaurant-2-line"></i>
+                        <span>لامار</span>
+                    </div>
+                    <p class="footer-tagline">
+                        حيث تلتقي الأصالة بالفخامة، لتجربة طعام لا تُنسى
+                    </p>
+                </div>
+                <div class="footer-social">
+                    <a href="#" class="social-link" aria-label="انستقرام">
+                        <i class="ri-instagram-line"></i>
+                    </a>
+                    <a href="#" class="social-link" aria-label="تويتر">
+                        <i class="ri-twitter-x-line"></i>
+                    </a>
+                    <a href="#" class="social-link" aria-label="سناب شات">
+                        <i class="ri-snapchat-line"></i>
+                    </a>
+                    <a href="#" class="social-link" aria-label="تيك توك">
+                        <i class="ri-tiktok-line"></i>
+                    </a>
+                </div>
+                <div class="footer-links">
+                    <a href="#menu">القائمة</a>
+                    <a href="#about">عن المطعم</a>
+                    <a href="#contact">تواصل معنا</a>
+                    <a href="#">سياسة الخصوصية</a>
+                </div>
+                <div class="footer-copyright">
+                    <p>© 2024 لامار. جميع الحقوق محفوظة</p>
+                </div>
+            </div>
+        </footer>
+
+        <!-- WhatsApp Button -->
+        <a href="https://wa.me/966500000000" class="whatsapp-float" id="whatsappBtn" target="_blank" rel="noopener noreferrer">
+            <div class="whatsapp-icon">
+                <i class="ri-whatsapp-line"></i>
+            </div>
+            <span class="whatsapp-tooltip">تواصل معنا</span>
+        </a>
+
+        <!-- Back to Top -->
+        <button class="back-to-top" id="backToTop" aria-label="العودة للأعلى">
+            <i class="ri-arrow-up-line"></i>
+        </button>
+
+        <!-- Bottom Navigation (Mobile) -->
+        <nav class="bottom-nav" id="bottomNav">
+            <a href="#hero" class="nav-item active" data-section="hero">
+                <i class="ri-home-4-line"></i>
+                <span>الرئيسية</span>
+            </a>
+            <a href="#menu" class="nav-item" data-section="menu">
+                <i class="ri-restaurant-line"></i>
+                <span>القائمة</span>
+            </a>
+            <a href="#about" class="nav-item" data-section="about">
+                <i class="ri-information-line"></i>
+                <span>عن المطعم</span>
+            </a>
+            <a href="#contact" class="nav-item" data-section="contact">
+                <i class="ri-phone-line"></i>
+                <span>اتصل بنا</span>
+            </a>
+        </nav>
+
+        <!-- Toast Notification -->
+        <div class="toast" id="toast">
+            <div class="toast-content">
+                <i class="toast-icon ri-check-line"></i>
+                <span class="toast-message"></span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+</body>
+</html>
